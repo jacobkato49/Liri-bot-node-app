@@ -1,0 +1,24 @@
+{
+  "name": "liri-bot-node-app",
+  "version": "1.0.0",
+  "description": "LIRI just like siri except a great value version",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobkato49/Liri-bot-node-app.git"
+  },
+  "author": "Jacob Kato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobkato49/Liri-bot-node-app/issues"
+  },
+  "homepage": "https://github.com/jacobkato49/Liri-bot-node-app#readme",
+  "dependencies": {
+    "request": "^2.81.0",
+    "spotify-web-api-node": "^2.4.0",
+    "twitter": "^1.7.1"
+  }
+}
