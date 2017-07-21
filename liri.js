@@ -85,13 +85,17 @@ function spotifyNow(){
     if(err){
       console.log("Error occurred: " + err);
       return;
+    } else if (data.error) {
+      console.log("Error occurred: " + data);
+      return;
     }
 
     else{
-      console.log("Artist: " + data.tracks.items[0].artists[0].name);
-      console.log("Song: " + data.tracks.items[0].name);
-      console.log("Album: " + data.tracks.items[0].album.name);
-      console.log("Preview here: " + data.tracks.items[0].preview_url);
+      console.dir(data);
+      // console.log("Artist: " + data.tracks.items[0].artists[0].name);
+      // console.log("Song: " + data.tracks.items[0].name);
+      // console.log("Album: " + data.tracks.items[0].album.name);
+      // console.log("Preview here: " + data.tracks.items[0].preview_url);
     }
 
   })
@@ -115,9 +119,10 @@ function movie(){
   else{
     movieSearch = search;
   }
-
   var queryUrl = "http://www.omdbapi.com/?t=" + movieSearch + "&y=&plot=short&apikey=40e9cece";
-  request(queryUrl), function(error,response,body){
+  console.log("movie time?");
+  request((queryUrl), function(error,response,body){
+    console.log("got hear");
     if(!error && response.statusCode === 200){
       console.log("Title: " + JSON.parse(body).Title);
       console.log("Release Year: " + JSON.parse(body).Year);
@@ -129,7 +134,7 @@ function movie(){
       console.log("Rotten Tomatoes Rating: " + JSON.parse(body).tomatoRating);
       console.log("Rotten Tomatoes URL: " + JSON.parse(body).tomatoURL);
     }
-  }
+  });
 }
 /******Movie Area End**********/
 
